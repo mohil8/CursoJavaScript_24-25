@@ -1,0 +1,12 @@
+#Contenedor_Cajas{
+
+    border: 2px solid;
+}
+
+.m1{
+
+    border: 2px solid rgb(6, 1, 1);
+    margin: 10px;
+    height: 37px;
+    width: 60px;
+}
