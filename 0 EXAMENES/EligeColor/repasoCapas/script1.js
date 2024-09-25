@@ -29,11 +29,16 @@ function inicio(){
             const random = Math.floor(Math.random()*20);
             const img = document.createElement('img');
             img.setAttribute("src","https://randomuser.me/api/portraits/men/"+random+".jpg");
+            img.className = "quitarBorde";
             cajaInterior.appendChild(img);
             //Le asignamos a la foto una funcion, al dar clik en la foto el borde cambia
             img.addEventListener("click",function(){
 
-                img.style.border = "5px solid blue";
+                if(img.className == "quitarBorde"){
+                    img.className = "ponerBorde";
+                }else{
+                    img.className = "quitarBorde";
+                }
             })
 
         }   
