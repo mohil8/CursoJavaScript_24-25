@@ -49,7 +49,19 @@ function empezar(){
                 //Añadimos función al botón creado
                 botonCaja.addEventListener('click',function(){
 
-                    alert("El color es: "+botonCaja.style.backgroundColor)
+                    if(botonCaja.style.backgroundColor == "green"){
+                        alert("El color es: verde")
+                    }else if(botonCaja.style.backgroundColor == "blue"){
+                        alert("El color es: azul")
+                    }else if(botonCaja.style.backgroundColor == "orange"){
+                        alert("El color es: naranja")
+                    }else if(botonCaja.style.backgroundColor == "red"){
+                        alert("El color es: rojo")
+                    }else if(botonCaja.style.backgroundColor == "yellow"){
+                        alert("El color es: amarillo")
+                    }
+
+                    
                 })
                
                 //Creamo las columnas y añadimos los botones en ellas
