@@ -35,7 +35,7 @@ function empezar() {
             avanzar=false;
             smNom.textContent="Número de caracteres inferior al permitido"
             //IndexOf averigua si hay al menos un número dentro del nombre
-        }else if(nombre.indexOf('0123456789')){
+        }else if((nombre.indexOf("0123456789")=!-1)){
             avanzar=false;
             smNom.textContent="Solo caracteres [A-Z]"
         }else{
