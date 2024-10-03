@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Ciclo</title>
+    <!-- Bootstrap 4 CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="js.js"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <form action="http://moralo.atwebpages.com/daw2022/insertar.php" method="get" id="validar" >
+            <div class="row">
+                <!-- Columna de ciclo -->
+                <div class="col-md-4">
+                    <h2>¿Qué ciclo estás cursando?</h2>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input type="radio" id="dam" name="ciclo" value="DAM" class="form-check-input" >
+                            <label for="dam" class="form-check-label">DAM</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="asir" name="ciclo" value="ASIR" class="form-check-input" >
+                            <label for="asir" class="form-check-label">ASIR</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="smr" name="ciclo" value="SMR" class="form-check-input" >
+                            <label for="smr" class="form-check-label">SMR</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="daw" name="ciclo" value="DAW" class="form-check-input" >
+                            <label for="daw" class="form-check-label">DAW</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="fpb" name="ciclo" value="FPB" class="form-check-input">
+                            <label for="fpb" class="form-check-label">FPB</label>
+                        </div>
+                        <small id="smCiclo" class="text-muted"></small>
+                    </div>
+                </div>
+
+                <!-- Columna de módulos -->
+                <div class="col-md-4">
+                    <h2>Módulos:</h2>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input type="checkbox" id="mod1" name="modulo" value="Diseño de Interfaces Web" class="form-check-input" >
+                            <label for="mod1" class="form-check-label">Diseño de Interfaces Web</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="mod2" name="modulo" value="Desarrollo Entorno Cliente" class="form-check-input" >
+                            <label for="mod2" class="form-check-label">Desarrollo Entorno Cliente</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="mod3" name="modulo" value="Desarrollo Entorno Servidor" class="form-check-input" >
+                            <label for="mod3" class="form-check-label">Desarrollo Entorno Servidor</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="mod4" name="modulo" value="Desarrollo Interfaces Multiplataforma" class="form-check-input" >
+                            <label for="mod4" class="form-check-label">Desarrollo Interfaces Multiplataforma</label>
+                        </div>
+                    </div>
+                    <small id="smModulo" class="text-muted"></small>
+                </div>
+
+                <!-- Columna de curso y nombre -->
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="curso">Curso:</label>
+                        <select class="form-control" id="curso" name="curso" >
+                            <option value="">Seleccione...</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                    </div>
+                    <small id="smCurso" class="text-muted"></small>
+
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" >
+                    </div>
+                    <small id="smNombre" class="text-muted"></small>
+                </div>
+            </div>
+
+            <!-- Horas asistidas y comentarios -->
+            <div class="form-group">
+                <label for="horas">Horas asistidas:</label>
+                <input type="range" class="custom-range" id="horas" name="horas" min="1" max="4" >
+            </div>
+
+            <div class="form-group">
+                <label for="comentarios">Comentarios:</label>
+                <textarea class="form-control" id="comentarios" name="comentarios" rows="3" ></textarea>
+                <small id="smComentario" class="text-muted"></small>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Aceptar</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap 4 JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
