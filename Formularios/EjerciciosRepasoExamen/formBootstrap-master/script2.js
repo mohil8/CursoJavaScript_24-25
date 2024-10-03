@@ -16,7 +16,7 @@ function empezar(){
     let modulo = document.querySelectorAll('input[name="modulos[]"]:checked');
     let curso = document.getElementById('selectCurso').value;
     let nombre = document.getElementById('nombre').value;
-    let horas = document.querySelector('.form-control').value;
+    let horas = document.getElementById('exampleFormControlSelect2').value;
 
     //Identificamos los small
 
@@ -47,6 +47,12 @@ function empezar(){
       smModulo.textContent = '';
     }
 
+   let modulosSelec ='';
+   for(let i=0;i<modulo.length;i++){
+
+    modulosSelec+=modulo[i].value+' | '
+   }
+
     //Validamos Curso
 
     if(curso ===''){
@@ -69,7 +75,18 @@ function empezar(){
       horas.textContent = 0;
     }
     
+    alert(
+      'Ciclo: '+ciclo.value+'\n'+
+      'Modulos: '+modulosSelec+'\n'+
+      'Curso: '+curso+'\n'+
+      'Nombre: '+nombre+'\n'+
+      'Horas Perdidas: '+horas
+      
+    )
     return avanzar;
+   
 
   }
+  
+ 
 }
