@@ -6,8 +6,9 @@ function empezar(){
 
   validacion.onsubmit = inicio;
 
-  function inicio(){
+  function inicio(event){
 
+    event.preventDefault();
     //Avanzar la usaremos por si detectamos errores
     let avanzar = true;
 
@@ -63,7 +64,7 @@ function empezar(){
     }
 
     //Validamos Nombre 
-    if(nombre.trim()===''){
+    if(nombre===''){
       smNombre.textContent='Este campo no puede estar vacio';
       avanzar = false;
     }else{
@@ -75,14 +76,14 @@ function empezar(){
       horas.textContent = 0;
     }
     
-    alert(
-      'Ciclo: '+ciclo.value+'\n'+
+    if (avanzar) {
+      alert('Ciclo: '+ciclo.value+'\n'+
       'Modulos: '+modulosSelec+'\n'+
       'Curso: '+curso+'\n'+
       'Nombre: '+nombre+'\n'+
-      'Horas Perdidas: '+horas
-      
-    )
+      'Horas Perdidas: '+horas);
+  }
+
     return avanzar;
    
 
