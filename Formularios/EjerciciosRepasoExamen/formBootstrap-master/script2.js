@@ -65,6 +65,7 @@ function empezar(){
 
     //Validamos Nombre 
     if(nombre===''){
+      
       smNombre.textContent='Este campo no puede estar vacio';
       avanzar = false;
     }else{
