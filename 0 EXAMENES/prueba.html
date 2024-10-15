@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Clics</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        #gameContainer {
+            text-align: center;
+        }
+
+        #clickButton, #startButton {
+            padding: 15px 30px;
+            font-size: 20px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        #timer, #score {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="gameContainer">
+        <h1>¡Juego de Clics!</h1>
+        <div id="timer">Tiempo restante: 30 segundos</div>
+        <div id="score">Puntuación: 0</div>
+        <button id="clickButton" onclick="incrementScore()" disabled>¡Haz clic aquí!</button>
+        <button id="startButton" onclick="startGame()">Iniciar</button>
+    </div>
+
+    <script>
+        let score = 0; // Variable para almacenar la puntuación
+        let timeLeft = 30; // Variable para almacenar el tiempo restante
+        let gameActive = false; // Bandera para determinar si el juego está activo
+        let countdown; // Variable para almacenar el temporizador
+
+        // Referencias a los elementos del DOM para actualizar el temporizador, la puntuación y los botones
+        const timerDisplay = document.getElementById('timer');
+        const scoreDisplay = document.getElementById('score');
+        const clickButton = document.getElementById('clickButton');
+        const startButton = document.getElementById('startButton');
+
+        // Función para iniciar el juego
+        function startGame() {
+            // Reiniciamos la puntuación y el tiempo restante al iniciar el juego
+            score = 0;
+            timeLeft = 30;
+            gameActive = true; // Activamos el juego
+
+            // Actualizamos la pantalla para mostrar la puntuación y el tiempo iniciales
+            scoreDisplay.textContent = "Puntuación: " + score;
+            timerDisplay.textContent = "Tiempo restante: " + timeLeft + " segundos";
+
+            // Habilitamos el botón para hacer clic y ocultamos el botón "Iniciar"
+            clickButton.disabled = false;
+            startButton.style.display = 'none';
+
+            // Iniciamos el temporizador que cuenta hacia atrás cada segundo
+            countdown = setInterval(function() {
+                if (timeLeft > 0) {
+                    timeLeft--; // Reducimos el tiempo restante
+                    timerDisplay.textContent = "Tiempo restante: " + timeLeft + " segundos";
+                } else {
+                    endGame(); // Terminar el juego cuando el tiempo se acabe
+                }
+            }, 1000);
+        }
+
+        // Función para incrementar la puntuación cuando el jugador hace clic en el botón
+        function incrementScore() {
+            if (gameActive) { // Solo incrementamos la puntuación si el juego está activo
+                score++;
+                scoreDisplay.textContent = "Puntuación: " + score;
+            }
+        }
+
+        // Función para terminar el juego cuando el tiempo se acaba
+        function endGame() {
+            clearInterval(countdown); // Detenemos el temporizador
+            gameActive = false; // Marcamos el juego como inactivo
+            clickButton.disabled = true; // Deshabilitamos el botón de clics
+            startButton.style.display = 'inline-block'; // Mostramos el botón "Iniciar" nuevamente
+            timerDisplay.textContent = "¡Tiempo acabado!";
+            alert("¡Juego terminado! Tu puntuación final es: " + score); // Mostramos la puntuación final
+        }
+    </script>
+</body>
+</html>
