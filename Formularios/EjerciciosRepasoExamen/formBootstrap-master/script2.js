@@ -74,7 +74,7 @@ function empezar(){
 
     if(horas === ''){
 
-      horas.textContent = 0;
+      horas = 0;
     }
     
     if (avanzar) {
