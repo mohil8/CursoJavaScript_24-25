@@ -1,19 +1,25 @@
  // URL del fichero JSON
-const url = "http://camacho.atwebpages.com/webcam/getWebcam.php";
+const url = 'JavaScript/CursoJavaScript_24-25/JS_JSON/EjWebcams/webcams.json';
+;
 // Contenedor donde se muestran los datos
 const ubicacion = document.querySelector("#fila");
 
 // Realiza la solicitud
 fetch(url)
   .then(response => {
+    console.log('Estado de la respuesta:', response.status);
     if (!response.ok) {
-      throw new Error('Error en la respuesta de la red');
+      throw new Error(`Error en la respuesta de la red: ${response.status} ${response.statusText}`);
     }
-    return response.json(); // Cambiar a json ya que se espera un objeto JSON
+    return response.json();
   })
-  .then(datos => mostrar(datos))
-  .catch(error => alert(error.message)) // Manejo de errores simplificado
-  .finally(() => alert('Fin de la solicitud'));
+  .then(datos => {
+    console.log('Datos recibidos:', datos);
+    mostrar(datos);
+  })
+  .catch(error => console.error('Error:', error))
+  .finally(() => console.log('Fin de la solicitud'));
+
 
 function mostrar(datos) {
   datos.forEach(webc => { // Cambiar foreach por forEach

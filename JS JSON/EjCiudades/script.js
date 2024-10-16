@@ -1,5 +1,6 @@
 // URL del fichero JSON
-const url = "http://camacho.atwebpages.com/carouselCiudades2/getCiudades.php";
+const url = 'CursoJavaS-24-25/CursoJavaScript_24-25/JS JSON/EjCiudades/ciudades.json';
+
 // Contenedor donde se muestran los datos
 const filas = document.querySelector("tbody");
 
