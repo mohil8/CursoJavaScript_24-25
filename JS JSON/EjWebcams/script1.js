@@ -1,5 +1,5 @@
  // URL del fichero JSON
-const url = 'JavaScript/CursoJavaScript_24-25/JS_JSON/EjWebcams/webcams.json';
+const url = 'getWebcam.php.json';
 ;
 // Contenedor donde se muestran los datos
 const ubicacion = document.querySelector("#fila");
@@ -9,7 +9,7 @@ fetch(url)
   .then(response => {
     console.log('Estado de la respuesta:', response.status);
     if (!response.ok) {
-      throw new Error(`Error en la respuesta de la red: ${response.status} ${response.statusText}`);
+      throw new Error('Error en la respuesta de la red');
     }
     return response.json();
   })
@@ -18,7 +18,7 @@ fetch(url)
     mostrar(datos);
   })
   .catch(error => console.error('Error:', error))
-  .finally(() => console.log('Fin de la solicitud'));
+  .finally();
 
 
 function mostrar(datos) {

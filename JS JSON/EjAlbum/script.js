@@ -1,4 +1,4 @@
-const url = "http://camacho.atwebpages.com/jumbotronAleatorio/getImagenes.php";
+const url = "album.json";
 
 const introducirImg = document.querySelector('#cajaX');
 
@@ -18,6 +18,7 @@ function mostrar(datos){
     datos.forEach(img => {
 
         let cajaImg = document.createElement('div');
+        cajaImg.className="card";
         introducirImg.appendChild(cajaImg);
 
         let imagen = document.createElement('img');

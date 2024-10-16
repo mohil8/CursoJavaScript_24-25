@@ -1,5 +1,5 @@
 // URL del fichero JSON
-const url = 'CursoJavaS-24-25/CursoJavaScript_24-25/JS JSON/EjCiudades/ciudades.json';
+const url = 'ciudades.json';
 
 // Contenedor donde se muestran los datos
 const filas = document.querySelector("tbody");
