@@ -1,6 +1,8 @@
 const url = "jugadores.json";
 
-const contenedor = document.querySelector("#contenedor");
+const contenedor = document.querySelector('.row.gx-4.gx-lg-5');
+
+
 
 fetch(url)
   .then(response => {
@@ -17,7 +19,11 @@ fetch(url)
 
   function mostrar(datos){
 
+    contenedor.replaceChildren();
+    
     datos.forEach(empleados=>{
+
+
 
         let caja1 = document.createElement('div');
         caja1.className="col-md-4 mb-5";
