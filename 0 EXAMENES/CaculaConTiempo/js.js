@@ -3,9 +3,30 @@ window.addEventListener("load", empezar);
 function empezar() {
 
     const body = document.body;
+  
 
     //Seleccionamos el botón comenzar
     const comenzar = document.querySelector('#inicio');
+    comenzar.addEventListener('click',()=>{
+
+    // Temporizador inicial
+    let tiempoRestante = 10; // 60 segundos
+    const temporizador = document.createElement('p');
+    temporizador.textContent = 'Tiempo restante: ' + tiempoRestante + 's';
+    body.appendChild(temporizador);
+  
+    // Configuramos el intervalo del temporizador
+    const intervalo = setInterval(() => {
+    tiempoRestante--;
+    temporizador.textContent = 'Tiempo restante: ' + tiempoRestante + 's';
+  
+    if (tiempoRestante <= 0) {
+            clearInterval(intervalo);
+            alert('¡Tiempo agotado! El juego ha terminado.');
+            comprobar.disabled = true; // Desactivamos el botón de comprobar
+        }
+    }, 1000); // Se ejecuta cada segundo
+    })
    
     //Seleccionamos el botón de fin
     const fin = document.querySelector('#fin');

@@ -68,9 +68,11 @@ function empezar(){
             adivina = prompt("Introduce valor")
 
             if(adivina<valor){
-                cuadro_tres.value = "hola"
+                alert('El número es mayor')
+                
             }else if(adivina>valor){
-                cuadro_tres.textContent = "Es menor";
+                alert('El número es menor')
+                
             }          
 
         }while(adivina!=valor);

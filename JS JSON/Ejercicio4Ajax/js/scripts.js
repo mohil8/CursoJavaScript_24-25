@@ -5,17 +5,10 @@ const contenedor = document.querySelector('.row.gx-4.gx-lg-5');
 
 
 fetch(url)
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Error en la respuesta de la red');
-    }
-    return response.json();
-  })
-  .then(datos => {
-    mostrar(datos);
-  })
-  .catch(error => error.message)
-  .finally();
+  .then(response => response.json())
+  .then(datos =>mostrar(datos))
+  .catch(error => alert(error.message))
+  .finally(alert('Fin de solicitud'));
 
   function mostrar(datos){
 
