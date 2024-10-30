@@ -24,23 +24,71 @@ function inicio(){
 
        arrayFilas=data.split('\n');
 
-        tabla.textContent=arrayFilas[0];
+    
 
-       for(let i=1;i<arrayFilas.length;i++){
+       for(let i=0;i<arrayFilas.length;i++){
 
         votos=arrayFilas[i].split(';');
 
-        const tr = document.createElement('tr');
-        body.appendChild(tr);
-        
-        votos.forEach(el => {
+        if(i==0){
+            votos.forEach(ini => {
+                
+            const th = document.createElement('th');
+            const titulo = document.createElement('p');
+            titulo.textContent=ini;
+            titulo.style.backgroundColor="green";
+            th.appendChild(titulo);
+            tabla.appendChild(th);
+            });
+            i++;
             
-            const td = document.createElement('td');
-            tr.appendChild(td);
-            td.textContent=el;
-            
-        });
+        }else{
 
+            const tr = document.createElement('tr');
+            body.appendChild(tr);
+        
+            for(let i=0;i<votos.length;i++){
+
+                const td = document.createElement('td');
+                tr.appendChild(td);
+                td.textContent=votos[i];
+
+                if(i==2 || i==3){
+
+                    if(votos[2]>votos[3]){
+
+                        if(i==2){
+                            td.style.backgroundColor="blue";
+                        }
+
+                    }else if(votos[2]<votos[3]){
+
+                        if(i==3){
+                            td.style.backgroundColor="red";
+                        }
+                    }
+                }
+            }
+
+            
+            if(votos[2]>votos[3]){
+                let resultado = document.createElement('td');
+                resultado.textContent='Biden';
+                let representantes = document.createElement('td');
+                representantes.textContent=votos[1];
+                tr.append(resultado,representantes);
+            }else if(votos[2]<votos[3]){
+                let resultado = document.createElement('td');
+                resultado.textContent='Trump';
+                let representantes = document.createElement('td');
+                representantes.textContent=votos[1];
+                tr.append(resultado,representantes);
+            }
+            
+
+        }
+        
+        
        }
 
 
