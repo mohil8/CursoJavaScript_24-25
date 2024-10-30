@@ -13,16 +13,14 @@ fetch(url)
 
 function mostrar(data){
 
-    let texto = '';
-    let lineas = data.split('\n');
+    let texto = 'Valores: ';
 
-    lineas.forEach(element => {
-        
-        texto+=element.trim();
-    });
+    texto+=data.split('\n');
+    let texto2=texto.replaceAll(',',' ');
+    
     
 
-    alert(texto);
+    alert(texto2);
 
 
 }
