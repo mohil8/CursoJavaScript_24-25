@@ -81,8 +81,4 @@ function empezar(){
         cuadro_tres.textContent=adivina;
     }
 
-
-   
-
-
 }

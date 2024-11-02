@@ -70,11 +70,6 @@ function rellenarFielSetTodos(){
     }
 }
 
-function generarColor(){
-    colorRandom= Math.floor(Math.random()*coloresHex.length);
-    return colorRandom;
-}
-
 function rellenarFielSetColores(){
     const cajas = fieldsetTodos.querySelectorAll("div");
     console.log(cajas.length);

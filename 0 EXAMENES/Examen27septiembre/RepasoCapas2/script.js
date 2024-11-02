@@ -2,8 +2,6 @@ window.addEventListener("load",empezar);
 
 function empezar(){
 
-    //Identificamos el body 
-    const bodyP = document.body;
     //Identificamos el container
     const contenedorPricipal = document.querySelector('.container');
     //Identificamos la gallery
@@ -44,7 +42,7 @@ function empezar(){
             let randomimg=Math.floor(Math.random()*20);
 
             const img = document.createElement('img');
-            img.setAttribute("src","/img/"+randomimg+".JPG")
+            img.setAttribute("src","./img/"+randomimg+".JPG")
             cajaFotos.appendChild(img);
         }
     })
