@@ -82,7 +82,7 @@ function empezar(){
             let ordenado= arrayCoches.slice().sort((a,b)=>(a.kms-b.kms));;  
             return ordenado; 
         }else if(cambio){
-            let ordenado= arrayCoches.slice().sort((a,b)=>(b.kms-a.kms));
+            let ordenado= arrayCoches.slice().sort((a,b)=>(a.kms-b.kms)).reverse();
             return ordenado;
         }
        
@@ -94,7 +94,7 @@ function empezar(){
             let ordenado=arrayCoches.slice().sort((a,b)=>(a.consumo-b.consumo));
             return ordenado;
         }else if(cambio){
-            let ordenado=arrayCoches.slice().sort((a,b)=>(b.consumo-a.consumo));
+            let ordenado=arrayCoches.slice().sort((a,b)=>(a.consumo-b.consumo)).reverse();
             return ordenado;
         }
        
@@ -106,7 +106,7 @@ function empezar(){
             let ordenado=arrayCoches.slice().sort((a,b)=>(a.marca.localeCompare(b.marca)));
             return ordenado;
         }else if(cambio){
-            let ordenado=arrayCoches.slice().sort((a,b)=>(b.marca.localeCompare(a.marca)));
+            let ordenado=arrayCoches.slice().sort((a,b)=>(a.marca.localeCompare(b.marca))).reverse();
             return ordenado;
         }
         
