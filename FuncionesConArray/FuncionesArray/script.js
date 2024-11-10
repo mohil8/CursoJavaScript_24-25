@@ -136,6 +136,8 @@ const alumnos2 = [{ nombre: 'Paco', edad: 18 }, { nombre: 'Mou', edad: 20 }, { n
 let indice = alumnos2.findIndex(alumno=>alumno.nombre=='Mou');
 console.log('La posición de Mou es: '+indice);
 
+/*-------------------------------------------------------------------------------------------------------------------------------------------------*/
+
 //vector.map(funcion) : retorna un nuevo array con los resultados de aplicar la función que se pasa como parámetro a cada elemento del array. 
 //El vector original no se modifica. Se consigue un nuevo vector con las modificaciones
 
@@ -182,6 +184,7 @@ const frutas2 = [
 //Con este obtengo un array con todos los elemetos procedentes de badajoz
 const badajoz=frutas2.filter(fruta=>fruta.procedencia=='Badajoz');
 console.log(badajoz);
+alert(badajoz)
 
 //Y con esto todos los de cacers ordenados por numero de caracteres  y que muestre solo el nombre
 const caceres = frutas2.filter(fruta=>fruta.procedencia=='Cáceres').map(fruta=>fruta.nombre).sort((a,b)=>a.length-b.length);
